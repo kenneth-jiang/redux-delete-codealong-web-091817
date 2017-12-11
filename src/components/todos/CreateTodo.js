@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 
 class CreateTodo extends Component {
-
   constructor(props) {
     super(props);
-    
     this.state = {
       text: '',
     };
@@ -19,7 +17,7 @@ class CreateTodo extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     this.props.store.dispatch({
-      type: 'ADD_TODO', 
+      type: 'ADD_TODO',
       todo: this.state,
     });
     this.setState({
@@ -33,9 +31,9 @@ class CreateTodo extends Component {
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <p>
             <label>add todo</label>
-            <input 
-              type="text" 
-              value={this.state.text} 
+            <input
+              type="text"
+              value={this.state.text}
               onChange={(event) => this.handleOnChange(event)}/>
           </p>
           <input type="submit" />
